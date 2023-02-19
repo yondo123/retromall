@@ -1,0 +1,34 @@
+{
+    "name": "next-js-webpack",
+    "version": "1.0.0",
+    "main": "index.js",
+    "dependencies": {
+        "@ant-design/icons": "^5.0.1",
+        "@chakra-ui/icons": "^2.0.17",
+        "@chakra-ui/react": "^2.5.1",
+        "@emotion/react": "^11.10.5",
+        "@emotion/styled": "^11.10.5",
+        "@types/antd": "^1.0.0",
+        "antd": "^5.2.0",
+        "framer-motion": "^9.0.3",
+        "next": "^12.3.4",
+        "prop-types": "^15.8.1",
+        "react": "^18.2.0",
+        "sass": "^1.58.0"
+    },
+    "scripts": {
+        "dev": "next",
+        "build": "next build"
+    },
+    "devDependencies": {
+        "@types/node": "^18.13.0",
+        "@types/react": "^18.0.27",
+        "@typescript-eslint/parser": "^5.52.0",
+        "eslint": "^8.33.0",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-react": "^7.32.2",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "prettier": "^2.8.3",
+        "typescript": "4.9.5"
+    }
+}
