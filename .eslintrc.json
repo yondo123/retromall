@@ -15,5 +15,7 @@
     },
     "extends": ["eslint:recommended", "plugin:react/recommended"], //플러그인 추천 규칙 상속
     "plugins": ["import", "react-hooks"], //사용 플러그인
-    "rules": {}
+    "rules": {
+        "react/no-children-prop": "off"
+    }
 }
