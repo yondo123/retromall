@@ -2,7 +2,7 @@ import React from 'react';
 import { ChakraBaseProvider } from '@chakra-ui/react';
 import HeadLayout from '../components/Layout/Head';
 import { extendedTheme } from '../chakraTheme';
-import '../styles/main.scss';
+// import styles from '../styles/main.scss';
 import type { AppProps } from 'next/app';
 import { SessionProvider } from 'next-auth/react';
 
