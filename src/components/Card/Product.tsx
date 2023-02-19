@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardBody, CardFooter, Button, Image, Stack, Text, Tag, Flex } from '@chakra-ui/react';
+import { Card, CardBody, CardFooter, Button, Image, Text, Tag, Flex } from '@chakra-ui/react';
 
 const Product = () => (
     <Card maxW="md" mt="3">
