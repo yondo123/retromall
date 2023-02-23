@@ -7,13 +7,13 @@ import Link from 'next/link';
 import { getToken } from '../../api/auth';
 
 const Navbar = () => {
-    const { data: session } = useSession();
+    const { data: session, status } = useSession();
     useEffect(() => {
         getCategories();
     }, []);
 
     if (session) {
-        console.log(JSON.stringify(session));
+        console.log(JSON.stringify(session), 'status', status);
         getToken();
     }
     return (
@@ -32,7 +32,9 @@ const Navbar = () => {
             <Spacer />
             <ButtonGroup gap="2">
                 <Button>
-                    <Link href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=6ec98f0b5b605b43fe2105efa844e7cf&redirect_uri=http://localhost:3000/kakaoAuth">
+                    <Link
+                        href={`https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${process.env.NEXT_PUBLIC_KAKAO_CLIENT_ID}&redirect_uri=redirect_uri=https://retromall.herokuapp.com/auth/kakao`}
+                    >
                         <a>카카오테스트</a>
                     </Link>
                 </Button>

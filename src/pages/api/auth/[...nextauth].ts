@@ -8,5 +8,12 @@ export default NextAuth({
             clientSecret: process.env.NEXT_PUBLIC_KAKAO_CLIENT_SECRET!
         })
     ],
+    callbacks: {
+        async session({ session, token }: any) {
+            session.accessToken = token;
+            session.test = 'test';
+            return session;
+        }
+    },
     secret: process.env.NEXT_PUBLIC_SECRET
 });
