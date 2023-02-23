@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 const KakaoAuth = () => {
-    const router = useRouter(null);
+    const router = useRouter();
     const { code } = router.query;
     useEffect(() => {
         return () => {
