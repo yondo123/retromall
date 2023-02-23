@@ -42,7 +42,7 @@ const Navbar = () => {
                         color="white"
                         _hover={{ bg: 'accent' }}
                         onClick={() => {
-                            signOut('kakao');
+                            signOut();
                         }}
                     >
                         로그아웃
