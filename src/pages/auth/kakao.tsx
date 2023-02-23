@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-const KakaoAuth = () => {
+const Kakao = () => {
     const router = useRouter();
     const { code } = router.query;
     useEffect(() => {
@@ -14,4 +14,4 @@ const KakaoAuth = () => {
     return <></>;
 };
 
-export default KakaoAuth;
+export default Kakao;
