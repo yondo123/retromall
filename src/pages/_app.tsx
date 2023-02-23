@@ -2,13 +2,13 @@ import React from 'react';
 import { ChakraBaseProvider } from '@chakra-ui/react';
 import HeadLayout from '../components/Layout/Head';
 import { extendedTheme } from '../chakraTheme';
-// import styles from '../styles/main.scss';
-import type { AppProps } from 'next/app';
 import { SessionProvider } from 'next-auth/react';
+import type { AppProps } from 'next/app';
+// import styles from '../styles/main.scss';
 
-const App = ({ Component, pageProps }: AppProps) => {
+const App = ({ Component, pageProps: { session, ...pageProps } }: any) => {
     return (
-        <SessionProvider>
+        <SessionProvider session={session}>
             <ChakraBaseProvider theme={extendedTheme}>
                 <HeadLayout title={'Retromall에 오신 것을 환영합니다.'} />
                 <Component {...pageProps} />
@@ -16,4 +16,5 @@ const App = ({ Component, pageProps }: AppProps) => {
         </SessionProvider>
     );
 };
+
 export default App;

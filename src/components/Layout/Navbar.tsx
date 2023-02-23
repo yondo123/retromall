@@ -1,16 +1,20 @@
 import React, { useEffect } from 'react';
 import { Box, Button, ButtonGroup, Flex, Menu, IconButton, MenuButton, MenuItem, MenuList, Spacer } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
-import { signIn, useSession } from 'next-auth/react';
+import { signIn, signOut, useSession } from 'next-auth/react';
 import { getCategories } from '../../api/product';
+import Link from 'next/link';
+import { getToken } from '../../api/auth';
 
 const Navbar = () => {
+    const { data: session } = useSession();
     useEffect(() => {
         getCategories();
     }, []);
-    const { data: session } = useSession();
+
     if (session) {
-        alert(session);
+        console.log(JSON.stringify(session));
+        getToken();
     }
     return (
         <Flex minWidth="max-content" alignItems="center" gap="2">
@@ -27,16 +31,34 @@ const Navbar = () => {
             </Box>
             <Spacer />
             <ButtonGroup gap="2">
-                <Button
-                    bgColor="primary"
-                    color="white"
-                    _hover={{ bg: 'accent' }}
-                    onClick={() => {
-                        signIn('kakao');
-                    }}
-                >
-                    카카오톡 로그인
+                <Button>
+                    <Link href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=6ec98f0b5b605b43fe2105efa844e7cf&redirect_uri=http://localhost:3000/kakaoAuth">
+                        <a>카카오테스트</a>
+                    </Link>
                 </Button>
+                {session ? (
+                    <Button
+                        bgColor="primary"
+                        color="white"
+                        _hover={{ bg: 'accent' }}
+                        onClick={() => {
+                            signOut('kakao');
+                        }}
+                    >
+                        로그아웃
+                    </Button>
+                ) : (
+                    <Button
+                        bgColor="primary"
+                        color="white"
+                        _hover={{ bg: 'accent' }}
+                        onClick={() => {
+                            signIn('kakao');
+                        }}
+                    >
+                        카카오톡 로그인
+                    </Button>
+                )}
             </ButtonGroup>
         </Flex>
     );
