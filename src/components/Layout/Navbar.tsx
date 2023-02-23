@@ -33,7 +33,7 @@ const Navbar = () => {
             <ButtonGroup gap="2">
                 <Button>
                     <Link
-                        href={`https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${process.env.NEXT_PUBLIC_KAKAO_CLIENT_ID}&redirect_uri=redirect_uri=https://retromall.herokuapp.com/auth/kakao`}
+                        href={`https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${process.env.NEXT_PUBLIC_KAKAO_CLIENT_ID}&redirect_uri=https://retromall.herokuapp.com/auth/kakao`}
                     >
                         <a>카카오테스트</a>
                     </Link>
