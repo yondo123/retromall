@@ -1,0 +1,15 @@
+@use 'src/styles/constants/breakpoints';
+
+@mixin responsive($screen) {
+    @if ($screen == 'Tablet') {
+        @media screen and (min-width: breakpoints.$md-breakpoint) {
+            @content;
+        }
+    }
+
+    @if ($screen == 'Desktop') {
+        @media screen and (min-width: breakpoints.$lg-breakpoint) {
+            @content;
+        }
+    }
+}
