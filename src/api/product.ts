@@ -1,9 +1,8 @@
-export const getCategories = () => {
-    // const token = 'testToken'; // 여기에 Bearer 토큰을 설정합니다.
-    const url = '/req/categories';
+import request from './instance';
 
-    fetch(url)
-        .then((response) => response.json())
-        .then((data) => console.log(data))
-        .catch((error) => console.error(error));
+export const getCategories = () => {
+    return request({
+        url: 'req/categories',
+        method: 'get'
+    });
 };
