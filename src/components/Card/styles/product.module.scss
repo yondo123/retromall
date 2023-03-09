@@ -1,0 +1,64 @@
+@import 'src/styles/main';
+
+.productList {
+  //@include wrap-flexbox();
+  @include flexbox(center, start);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.productDetail {
+  > div {
+    margin-top: 4px;
+  }
+}
+
+.productTitle {
+  @include font(16, $font);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.like {
+  @include font(14, $pink);
+  @include flexbox(start);
+  margin-top: 4px;
+  align-content: center;
+
+  & span {
+    margin-left: 4px;
+  }
+}
+
+.price {
+  @include font(16, $font);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.ago {
+  @include font(13, $font);
+  margin-left: 4px;
+}
+
+.productItem {
+  max-width: 168px;
+  box-sizing: border-box;
+  flex-basis: 25%;
+  & img {
+    display: block;
+    border: 1px solid $border;
+    border-radius: 8px;
+    display: block;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+  }
+}
+
+@include responsive(Tablet) {
+}
+
+@include responsive(Desktop) {
+}
