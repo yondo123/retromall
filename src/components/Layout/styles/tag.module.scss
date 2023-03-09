@@ -1,0 +1,18 @@
+@import 'src/styles/main';
+
+.tag {
+  @include font(12, $white);
+  padding: 4px 8px;
+  font-weight: bold;
+  background-color: $font;
+  border-radius: 12px;
+}
+
+@include responsive(Tablet) {
+  .menu {
+    @include flexbox(center, center);
+  }
+}
+
+@include responsive(Desktop) {
+}
