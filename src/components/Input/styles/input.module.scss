@@ -1,0 +1,17 @@
+@import 'src/styles/main';
+
+.search {
+    @include font(16, $black);
+    width: 100%;
+    padding: 8px 4px;
+    border: none;
+    border-bottom: 1px solid $border;
+
+    &:focus-visible {
+        outline-color: $primary;
+    }
+}
+
+.center {
+    @include flexbox();
+}
