@@ -1,0 +1,36 @@
+@import 'src/styles/main';
+
+.menu {
+  @include flexbox(start, center);
+  @include font(14);
+  margin-top: 8px;
+  overflow: auto;
+  border: none;
+  border-bottom: 1px solid $border;
+  & li {
+    position: relative;
+    color: $accent;
+    padding: 0 8px;
+    cursor: pointer;
+    height: 64px;
+  }
+}
+
+.title {
+  font-weight: bold;
+}
+
+.icon {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@include responsive(Tablet) {
+  .menu {
+    @include flexbox(center, center);
+  }
+}
+
+@include responsive(Desktop) {
+}

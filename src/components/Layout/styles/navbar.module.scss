@@ -1,0 +1,28 @@
+@import 'src/styles/main';
+
+.nav {
+  color: $font;
+  & ol {
+    @include flexbox(around);
+    list-style: none;
+    color: $white;
+    padding: 0;
+    border: 1px solid $primary;
+    background-color: $primary;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 16px 0;
+    position: fixed;
+    width: 344px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    z-index: 10;
+  }
+}
+
+@include responsive(Tablet) {
+}
+
+@include responsive(Desktop) {
+}
