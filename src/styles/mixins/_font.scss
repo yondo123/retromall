@@ -1,0 +1,39 @@
+@use '../constants/typography';
+
+@mixin font($size, $color: false) {
+    @if ($size == 12) {
+        font-size: typography.$font-size-12;
+        line-height: typography.$line-height-12;
+        letter-spacing: typography.$letter-spacing-12;
+    }
+    @if ($size == 13) {
+        font-size: typography.$font-size-13;
+        line-height: typography.$line-height-13;
+        letter-spacing: typography.$letter-spacing-13;
+    }
+    @if ($size == 14) {
+        font-size: typography.$font-size-14;
+        line-height: typography.$line-height-14;
+        letter-spacing: typography.$letter-spacing-14;
+    }
+    @if ($size == 16) {
+        font-size: typography.$font-size-16;
+        line-height: typography.$line-height-16;
+        letter-spacing: typography.$letter-spacing-16;
+    }
+    @if ($size == 18) {
+        font-size: typography.$font-size-18;
+        line-height: typography.$line-height-18;
+        letter-spacing: typography.$letter-spacing-18;
+    }
+    @if ($size == 24) {
+        font-size: typography.$font-size-24;
+        line-height: typography.$line-height-24;
+        letter-spacing: typography.$letter-spacing-24;
+    }
+
+    //color 형태 유효성 검사
+    @if (type-of($color) == color) {
+        color: $color;
+    }
+}

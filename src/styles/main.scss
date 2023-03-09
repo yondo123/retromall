@@ -6,10 +6,10 @@
 @import 'constants/breakpoints';
 
 /* base */
-@import 'base/reset';
 @import 'base/layout';
 @import 'base/global';
 
 /* mixins */
 @import 'mixins/responsive';
 @import 'mixins/flexbox';
+@import 'mixins/font';
