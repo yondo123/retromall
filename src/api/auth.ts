@@ -1,7 +1,14 @@
-import { getCsrfToken } from 'next-auth/react';
+import request from './instance';
 
-export async function getToken() {
-    const csrfToken = await getCsrfToken();
-
-    console.log(csrfToken);
-}
+export const kakaoLogin = (authorizationCode?: string | string[]) => {
+  console.log('또잉', authorizationCode);
+  return request({
+    url: '/req/members/login',
+    method: 'post',
+    withCredentials: false,
+    data: {
+      authorizationCode,
+      oAuthType: 'KAKAO'
+    }
+  });
+};
