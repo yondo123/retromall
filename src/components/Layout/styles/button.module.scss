@@ -1,0 +1,135 @@
+@import 'src/styles/main';
+%button-base {
+  @include inline-flexbox(center, center);
+  cursor: pointer;
+  padding: 0 8px;
+  font-weight: 700;
+  border-radius: 4px;
+  border-style: none;
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+}
+
+.fill-primary {
+  @extend %button-base;
+  color: white;
+  background-color: $primary;
+  transition: background-color 200ms ease-in-out;
+
+  &:hover {
+    background-color: #de7315;
+  }
+
+  &:disabled:hover {
+    background-color: $primary;
+  }
+}
+
+.fill-secondary {
+  @extend %button-base;
+  color: white;
+  background-color: $secondary;
+  transition: background-color 200ms ease-in-out;
+
+  &:hover {
+    background-color: #ca6194;
+  }
+
+  &:disabled:hover {
+    background-color: $secondary;
+  }
+}
+
+.fill-accent {
+  @extend %button-base;
+  color: white;
+  background-color: $accent;
+  transition: background-color 200ms ease-in-out;
+
+  &:hover {
+    background-color: #d94f54;
+  }
+
+  &:disabled:hover {
+    background-color: $accent;
+  }
+}
+
+.outlined-primary {
+  @extend %button-base;
+  color: $primary;
+  border: 1px solid $primary;
+  transition: background-color 200ms ease-in-out;
+
+  &:hover {
+    background-color: #fbbf8b;
+  }
+
+  &:disabled:hover {
+    background-color: $white;
+  }
+}
+
+.outlined-secondary {
+  @extend %button-base;
+  color: $secondary;
+  border: 1px solid $secondary;
+  transition: background-color 200ms ease-in-out;
+
+  &:hover {
+    background-color: #e2a7c4;
+  }
+
+  &:disabled:hover {
+    background-color: $white;
+  }
+}
+
+.outlined-accent {
+  @extend %button-base;
+  color: $accent;
+  border: 1px solid $accent;
+  transition: background-color 200ms ease-in-out;
+
+  &:hover {
+    background-color: #eca7a9;
+  }
+
+  &:disabled:hover {
+    background-color: $white;
+  }
+}
+
+.ghost {
+  @extend %button-base;
+  color: $black;
+  background-color: transparent;
+  transition: color 200ms ease-in-out;
+
+  &:disabled:hover {
+    color: $primary;
+    background-color: transparent;
+  }
+}
+
+.sm {
+  height: 32px;
+  @include font(14);
+}
+
+.md {
+  height: 40px;
+  @include font(16);
+}
+
+.lg {
+  height: 48px;
+  @include font(16);
+}
+
+.xl {
+  height: 55px;
+  @include font(18);
+}
