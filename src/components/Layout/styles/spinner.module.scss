@@ -1,0 +1,15 @@
+@import 'src/styles/main';
+
+.spinnerWrap {
+  @include column-flexbox();
+  @include font(18);
+  font-weight: bold;
+  height: 100vh;
+  color: $primary;
+}
+
+@include responsive(Tablet) {
+}
+
+@include responsive(Desktop) {
+}
