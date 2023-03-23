@@ -1,0 +1,25 @@
+@import 'src/styles/main';
+
+.header-wrapper {
+  border-bottom: 1px solid $border;
+}
+
+.header {
+  position: relative;
+  @include flexbox('start', 'center');
+  @include font(14, $font);
+}
+
+.header-title {
+  text-align: center;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@include responsive(Tablet) {
+}
+
+@include responsive(Desktop) {
+}
