@@ -8,9 +8,25 @@ export const getCategories = () => {
   });
 };
 
+export const getAllProducts = () => {
+  return request({
+    method: 'get',
+    url: '/req/products'
+  });
+};
+
+export const getProduct = (productId: number) => {
+  return request({
+    // headers: { Authorization: `Bearer ${sessionStorage.getItem('accessToken')}` },
+    method: 'get',
+    url: `/req/products/${productId}`
+  });
+};
+
 export const registerProduct = (product: Product) => {
   const { content, amount, images, category, hashTags, thumbnail } = product;
   return request({
+    headers: { Authorization: `Bearer ${sessionStorage.getItem('accessToken')}` },
     url: '/req/products',
     method: 'post',
     data: {
