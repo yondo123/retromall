@@ -1,4 +1,3 @@
-export type Hashtags = string[];
 export type ImageUrls = string[];
 
 export interface Product {
@@ -7,5 +6,24 @@ export interface Product {
   category: string;
   thumbnail: string;
   images: ImageUrls;
-  hashTags: Hashtags;
+  hashTags: string[];
+}
+
+export interface ProductItem {
+  productId: number;
+  author: string;
+  content: string;
+  amount: number;
+  likes: number;
+  thumbnail: string;
+  createdAt: string;
+  modifiedAt: string;
+}
+
+export interface ProductDetailItem extends Omit<ProductItem, 'author' | 'thumbnail'> {
+  category: string;
+  isLiked: boolean;
+  hashTags: string[];
+  images: string[];
+  isAuthor: string;
 }
