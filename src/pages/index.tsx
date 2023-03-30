@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Layout/Navbar';
 import ProductContainer from '../components/Card/ProductContainer';
-import ProductItem from '../components/Card/ProductItem';
 import Link from 'next/link';
 const Home = () => {
   return (
@@ -14,18 +13,7 @@ const Home = () => {
         </Link>
       </button>
       <Navbar />
-      <ProductContainer>
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-      </ProductContainer>
+      <ProductContainer />
     </div>
   );
 };
