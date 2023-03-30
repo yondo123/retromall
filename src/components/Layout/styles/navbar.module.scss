@@ -6,7 +6,6 @@
     @include flexbox(around);
     list-style: none;
     color: $white;
-    padding: 0;
     border: 1px solid $primary;
     background-color: $primary;
     font-weight: bold;
@@ -18,6 +17,11 @@
     transform: translateX(-50%);
     bottom: 0;
     z-index: 10;
+
+    & a {
+      color: $white;
+      text-decoration: none;
+    }
   }
 }
 
