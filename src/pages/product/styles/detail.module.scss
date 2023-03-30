@@ -1,0 +1,56 @@
+@import 'src/styles/main';
+
+.detail-section {
+  position: absolute;
+  top: 40px;
+  & img {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+  }
+}
+
+.tags {
+  @include flexbox(start);
+  gap: 8px;
+}
+.detail-title {
+  @include font(20, $font);
+  word-break: break-word;
+}
+
+.detail-content-wrap {
+  padding: 8px;
+}
+
+.detail-content {
+  & dt {
+    @include font(16, $accent);
+    font-weight: bold;
+  }
+  & dd {
+    @include font(16, $font);
+    margin-left: 4px;
+  }
+  & div {
+    @include flexbox(start);
+  }
+  .like {
+    @include font(16, $pink);
+    font-weight: bold;
+  }
+}
+
+.detail-button-wrap {
+  @include flexbox(start);
+  max-width: 372px;
+  margin-top: 8px;
+  gap: 8px;
+}
+
+@include responsive(Tablet) {
+}
+
+@include responsive(Desktop) {
+}

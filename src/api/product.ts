@@ -16,8 +16,9 @@ export const getAllProducts = () => {
 };
 
 export const getProduct = (productId: number) => {
+  const accessToken = sessionStorage.getItem('accessToken');
   return request({
-    // headers: { Authorization: `Bearer ${sessionStorage.getItem('accessToken')}` },
+    headers: { Authorization: accessToken ? `Bearer ${accessToken}` : '' },
     method: 'get',
     url: `/req/products/${productId}`
   });
