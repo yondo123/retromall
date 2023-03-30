@@ -1,5 +1,5 @@
 export type ImageUrls = string[];
-
+export type Hashtag = `#${string}`;
 export interface Product {
   content: string;
   amount: number;
@@ -18,9 +18,10 @@ export interface ProductItem {
   thumbnail: string;
   createdAt: string;
   modifiedAt: string;
+  title: string;
 }
 
-export interface ProductDetailItem extends Omit<ProductItem, 'author' | 'thumbnail'> {
+export interface ProductDetailItem extends Omit<ProductItem, 'thumbnail'> {
   category: string;
   isLiked: boolean;
   hashTags: string[];
