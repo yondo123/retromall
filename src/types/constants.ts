@@ -4,7 +4,17 @@ type Constants = {
 };
 
 export type UrlTokens = 'kakao';
-export type ColorTokens = 'font' | 'border' | 'primary' | 'secondary' | 'tertiary' | 'accent' | 'white' | 'black';
+export type ColorTokens =
+  | 'font'
+  | 'border'
+  | 'primary'
+  | 'secondary'
+  | 'tertiary'
+  | 'accent'
+  | 'white'
+  | 'black'
+  | 'pink'
+  | 'lightPink';
 
 export const constants: Constants = {
   colors: {
@@ -15,7 +25,9 @@ export const constants: Constants = {
     tertiary: '#825795',
     accent: '#f2585e',
     white: '#fff',
-    black: '#000'
+    black: '#000',
+    pink: '#f8a5c2',
+    lightPink: '#ffcdd2'
   },
   urls: {
     kakao: `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${process.env.NEXT_PUBLIC_KAKAO_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_KAKAO_REDIRECT_DEV}`
