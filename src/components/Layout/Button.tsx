@@ -1,21 +1,27 @@
 import React from 'react';
 import style from './styles/button.module.scss';
-import { ColorTokens } from '../../types';
+import type { ColorTokens } from '../../types';
 
 interface ButtonProps {
   variants: 'fill' | 'outlined' | 'ghost';
-  size: 'sm' | 'md' | 'lg' | 'xl';
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children: React.ReactNode;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
   color?: Extract<ColorTokens, 'primary' | 'accent' | 'secondary'>;
   disabled?: boolean;
+  type?: 'button' | 'submit' | 'reset';
 }
 const Button = (props: ButtonProps) => {
-  const { variants = 'fill', size = 'md', children, disabled, color = 'primary' } = props;
+  const { type = 'button', variants = 'fill', size = 'md', children, disabled, color = 'primary' } = props;
   const buttonColorClass = variants !== 'ghost' ? `${variants}-${color}` : variants;
 
   return (
-    <button disabled={disabled} className={`${style[buttonColorClass]} ${style[size]}`} onClick={props.onClick}>
+    <button
+      type={type}
+      disabled={disabled}
+      className={`${style[buttonColorClass]} ${style[size]}`}
+      onClick={props.onClick}
+    >
       {children}
     </button>
   );

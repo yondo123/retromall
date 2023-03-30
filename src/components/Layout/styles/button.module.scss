@@ -133,3 +133,9 @@
   height: 55px;
   @include font(18);
 }
+
+.full {
+  width: 100vw;
+  height: 40px;
+  @include font(18);
+}
