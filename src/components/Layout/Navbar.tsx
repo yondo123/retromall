@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { getCategories } from '../../api/product';
+import { constants } from '../../types/constants';
+import style from './styles/navbar.module.scss';
 import Menu from './Menu';
 import Input from '../Input/Input';
-import style from './styles/navbar.module.scss';
 import Link from 'next/link';
 
 const Navbar = () => {
@@ -10,10 +11,6 @@ const Navbar = () => {
     getCategories().then((res) => {
       console.log(res);
     });
-    //
-    // fetch('/api/login')
-    //   .then((response) => response.json())
-    //   .then((data) => console.log(data));
   }, []);
 
   return (
@@ -33,9 +30,7 @@ const Navbar = () => {
       </ol>
       <Menu />
       <button className="visually-hidden">
-        <Link
-          href={`https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${process.env.NEXT_PUBLIC_KAKAO_CLIENT_ID}&redirect_uri=https://retromall.herokuapp.com/auth/kakao`}
-        >
+        <Link href={constants.urls.kakao}>
           <span>카카오 로그인</span>
         </Link>
       </button>
