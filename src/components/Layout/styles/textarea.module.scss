@@ -1,0 +1,24 @@
+@import 'src/styles/main';
+
+.textarea {
+  @include font(16, $font);
+  width: 100%;
+  height: 360px;
+  padding: 0 4px;
+  border: 1px solid $border;
+  min-height: 100px;
+  resize: none;
+  box-sizing: border-box;
+  &:disabled {
+    background-color: transparent;
+  }
+  &::placeholder {
+    @include font(16);
+  }
+}
+
+@include responsive(Tablet) {
+}
+
+@include responsive(Desktop) {
+}
