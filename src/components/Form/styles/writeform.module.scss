@@ -1,6 +1,9 @@
 @import 'src/styles/main';
 
 .write-form {
+  width: 100%;
+  position: absolute;
+  top: 40px;
   & p {
     @include font(14, $accent);
     padding: 0 8px;
