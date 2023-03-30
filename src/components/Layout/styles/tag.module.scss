@@ -4,8 +4,8 @@
   @include font(12, $white);
   padding: 4px 8px;
   font-weight: bold;
-  background-color: $font;
-  border-radius: 12px;
+  background-color: $pink;
+  border-radius: 8px;
 }
 
 @include responsive(Tablet) {
