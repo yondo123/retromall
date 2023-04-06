@@ -3,7 +3,7 @@ import style from './styles/header.module.scss';
 import ChevronLeft from '../Icons/ChevronLeft';
 import Button from './Button';
 import { constants } from '../../types/constants';
-import { useRouterHandler } from '../../utils/useRouterHandler';
+import { useRouterHandler } from '../../hooks/useRouterHandler';
 
 interface HeaderProps {
   title: string;
