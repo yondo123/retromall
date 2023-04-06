@@ -1,10 +1,11 @@
 import React from 'react';
+import wrapper from '../store/configureStore';
 import HeadLayout from '../components/Layout/Head';
 import { SessionProvider } from 'next-auth/react';
 import '../styles/reset.scss';
 import '../styles/main.scss';
 
-const App = ({ Component, pageProps: { session, ...pageProps } }: any) => {
+const Retromall = ({ Component, pageProps: { session, ...pageProps } }: any) => {
   return (
     <SessionProvider session={session}>
       <HeadLayout title={'Retromall에 오신 것을 환영합니다.'} />
@@ -13,4 +14,4 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: any) => {
   );
 };
 
-export default App;
+export default wrapper.withRedux(Retromall);
