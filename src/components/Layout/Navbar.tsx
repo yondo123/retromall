@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { addMajorCategories } from '../../reducers/categories';
+import { useDispatch } from 'react-redux';
 import { getCategories } from '../../api/product';
 import { constants } from '../../types/constants';
 import style from './styles/navbar.module.scss';
@@ -7,9 +9,19 @@ import Input from '../Input/Input';
 import Link from 'next/link';
 
 const Navbar = () => {
+  const dispatch = useDispatch();
   useEffect(() => {
     getCategories().then((res) => {
-      console.log(res);
+      const responseData = res.data;
+      if (responseData) {
+        dispatch(
+          addMajorCategories(
+            responseData.data.map((category: any) => {
+              return { item: category.id, name: category.category };
+            })
+          )
+        );
+      }
     });
   }, []);
 
