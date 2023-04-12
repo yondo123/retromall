@@ -3,6 +3,7 @@
 .detail-section {
   position: absolute;
   top: 40px;
+  width: 100vw;
   & img {
     display: block;
     width: 100%;
@@ -44,7 +45,6 @@
 
 .detail-button-wrap {
   @include flexbox(start);
-  max-width: 372px;
   margin-top: 8px;
   gap: 8px;
 }
