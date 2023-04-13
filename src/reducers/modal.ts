@@ -12,7 +12,9 @@ export const initialState: ModalState = {
     title: '',
     message: '',
     confirmMessage: '확인',
-    cancelMessage: '취소'
+    cancelMessage: '취소',
+    handleSuccess: () => {},
+    handleCancel: () => {}
   }
 };
 
