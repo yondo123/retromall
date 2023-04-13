@@ -20,7 +20,7 @@ const Button = (props: ButtonProps) => {
       type={type}
       disabled={disabled}
       className={`${style[buttonColorClass]} ${style[size]}`}
-      onClick={props.onClick}
+      {...(props.onClick ? { onClick: props.onClick } : {})}
     >
       {children}
     </button>
