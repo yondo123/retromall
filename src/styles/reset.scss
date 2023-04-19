@@ -1,3 +1,4 @@
+@import 'constants/typography';
 // sass-lint:disable-all
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -23,6 +24,7 @@ html {
  */
 
 body {
+  font-family: $font-main;
   margin: 0;
 }
 

@@ -1,5 +1,12 @@
 @use 'src/styles/constants/breakpoints';
 
+@font-face {
+  font-family: 'Roboto';
+  src: url('/static/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 //시각효과 제거
 .visually-hidden {
   position: absolute !important;
